@@ -17,6 +17,7 @@ include(defaults/HunterCacheServers)
 
 cable_configure_toolchain(DEFAULT cxx11)
 cable_set_build_type(DEFAULT Release CONFIGURATION_TYPES Release RelWithDebInfo Debug)
+add_compile_options(-Wno-c++98-compat)
 
 if(NOT WIN32)
     # Outside of Windows build only Release packages.

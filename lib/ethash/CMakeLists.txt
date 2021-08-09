@@ -26,7 +26,7 @@ target_sources(ethash PRIVATE
 
 
 if(CABLE_COMPILER_GNULIKE AND NOT SANITIZE MATCHES undefined)
-    target_compile_options(ethash PRIVATE $<$<COMPILE_LANGUAGE:CXX>:-fno-rtti>)
+    #target_compile_options(ethash PRIVATE $<$<COMPILE_LANGUAGE:CXX>:-fno-rtti>)
 endif()
 
 install(

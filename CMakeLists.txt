@@ -42,6 +42,14 @@ if(CABLE_COMPILER_GNULIKE)
             $<$<COMPILE_LANGUAGE:CXX>:-Wno-c++98-compat-pedantic>
             $<$<COMPILE_LANGUAGE:CXX>:-Wno-old-style-cast>
         )
+        if(CMAKE_GENERATOR MATCHES "Visual Studio")
+            add_compile_options(
+            -Wno-used-but-marked-unused
+            -Wno-undef
+            -Wno-microsoft-enum-value
+            -Wno-sign-compare
+            )
+        endif()
     endif()
 
     option(ETHASH_NATIVE "Build for native CPU" OFF)

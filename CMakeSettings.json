@@ -11,12 +11,23 @@
       "ctestCommandArgs": ""
     },
     {
-      "name": "x64-Clang-Debug",
+      "name": "x64-Clang-Debug-vs",
+      "generator": "Visual Studio 16 2019 Win64",
+      "configurationType": "Debug",
+      "buildRoot": "${projectDir}\\out\\build\\${name}",
+      "installRoot": "${projectDir}\\out\\install\\${name}",
+      "cmakeCommandArgs": "-DETHASH_BUILD_TESTS:BOOL=ON",
+      "buildCommandArgs": "",
+      "ctestCommandArgs": "",
+      "inheritEnvironments": [ "clang_cl_x64_x64" ]
+    },
+    {
+      "name": "x64-Clang-Debug-ninja",
       "generator": "Ninja",
       "configurationType": "Debug",
       "buildRoot": "${projectDir}\\out\\build\\${name}",
       "installRoot": "${projectDir}\\out\\install\\${name}",
-      "cmakeCommandArgs": "-DETHASH_BUILD_TESTS:BOOL=OFF",
+      "cmakeCommandArgs": "-DETHASH_BUILD_TESTS:BOOL=ON",
       "buildCommandArgs": "",
       "ctestCommandArgs": "",
       "inheritEnvironments": [ "clang_cl_x64_x64" ]

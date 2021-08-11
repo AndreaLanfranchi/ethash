@@ -27,7 +27,6 @@ if(CABLE_COMPILER_GNULIKE)
     set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Og")
 
     add_compile_options(
-        -Wno-c++98-compat
         -Wcast-qual
         -Wsign-conversion
         -Wundef
@@ -37,6 +36,7 @@ if(CABLE_COMPILER_GNULIKE)
 
     if(MSVC) # clang-cl
         add_compile_options(
+            -Wno-c++98-compat
             -Wno-exit-time-destructors
             -Wno-global-constructors
             $<$<COMPILE_LANGUAGE:CXX>:-Wno-c++98-compat-pedantic>

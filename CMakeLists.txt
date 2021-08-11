@@ -15,7 +15,6 @@ include(HunterGate)
 
 cable_configure_toolchain(DEFAULT cxx11)
 cable_set_build_type(DEFAULT Release CONFIGURATION_TYPES Release RelWithDebInfo Debug)
-add_compile_options(-Wno-c++98-compat)
 
 include(cmake/Hunter/init.cmake)
 
@@ -28,6 +27,7 @@ if(CABLE_COMPILER_GNULIKE)
     set(CMAKE_C_FLAGS_DEBUG "${CMAKE_C_FLAGS_DEBUG} -Og")
 
     add_compile_options(
+        -Wno-c++98-compat
         -Wcast-qual
         -Wsign-conversion
         -Wundef
